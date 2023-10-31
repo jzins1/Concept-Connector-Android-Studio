@@ -51,10 +51,12 @@
         android:id="@+id/textViewConceptLinks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="206dp"
         android:text="Concept Links:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/editTextConcept"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="337dp" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSubmit" />
 
     <TextView
         android:id="@+id/textViewSecondConcept"
@@ -65,13 +67,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textViewFirstConcept" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewConcepts"
-        android:layout_width="410dp"
-        android:layout_height="200dp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewConceptLinks"
-        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/buttonInsertFirst"
@@ -93,55 +88,67 @@
         app:layout_constraintTop_toTopOf="@+id/buttonInsertFirst" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="409dp"
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@+id/buttonInsertFirst"
-        tools:layout_editor_absoluteX="0dp">
+        android:layout_marginTop="185dp"
+        android:layout_marginBottom="82dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewConcepts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewCurrent"
+        <TextView
+            android:id="@+id/textViewCurrent"
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="98dp" />
     </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/buttonSubmit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
         android:text="Submit"
+        app:layout_constraintBottom_toTopOf="@+id/textViewConceptLinks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="287dp" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <Button
         android:id="@+id/buttonClearConcepts"
         android:layout_width="176dp"
-        android:layout_height="51dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="4dp"
         android:text="Clear Concepts"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="676dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextConcept" />
 
     <Button
         android:id="@+id/buttonClearLinks"
         android:layout_width="176dp"
-        android:layout_height="51dp"
+        android:layout_height="0dp"
         android:text="Clear Links"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonClearConcepts"
         app:layout_constraintEnd_toStartOf="@+id/buttonClearConcepts"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="676dp" />
+        app:layout_constraintTop_toTopOf="@+id/buttonClearConcepts" />
 
     <EditText
         android:id="@+id/editTextConcept"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="58dp"
         android:ems="10"
         android:hint="Concept Name"
         android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/buttonClearConcepts"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="573dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewConceptLinks" />
 
     <Button
         android:id="@+id/buttonAddConcept"
@@ -153,5 +160,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextConcept" />
+
+    <TextView
+        android:id="@+id/textViewConcepts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="162dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

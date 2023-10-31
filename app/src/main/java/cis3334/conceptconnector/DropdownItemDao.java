@@ -8,6 +8,7 @@ import androidx.room.Query;
 
 import java.util.List;
 
+@Dao
 public interface DropdownItemDao {
     @Query("SELECT * FROM DropdownItem")
     LiveData<List<DropdownItem>> getAll();
